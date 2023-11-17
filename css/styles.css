@@ -162,12 +162,11 @@ ul {
 }
 
 .carousel__slide {
-    width: 800px;   
+    width: 30%;
+    padding: 20px; 
+    align-self: center; 
 }
 
-.carousel__slide:hover {
-    width: 1000px;
-}
 
 .carousel__title {
     font-size: 1.2em;

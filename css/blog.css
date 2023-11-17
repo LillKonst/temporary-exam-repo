@@ -15,7 +15,7 @@ main {
     align-self: flex-start;
 }
 
-.categories-btn {
+.categories-btn, .cta-btn {
     background-color: #D9E7F4;
     width: fit-content;
     border: none;
