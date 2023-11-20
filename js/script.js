@@ -85,19 +85,6 @@ previousButton.addEventListener("click", () => {
     }
 });
 
-dotsNav.addEventListener("click", e => {
-    //what indicator was clicked on
-        const targetDot = e.target.closest("button"); 
-       
-        if (!targetDot) return;
-        const currentSlide = track.querySelector(".current-slide");
-        const currentDot = dotsNav.querySelector(".current-slide");
-        const targetIndex = dots.findIndex(dot => dot === targetDot);
-        const targetSlide = slides[targetIndex];
-    
-        moveToSlide(track, currentSlide, targetSlide);
-});
-
 
 
 /*const tinyStoriesAPI = "https://rainydays-api.lillkonst.no/wp-json/wp/v2/posts";

@@ -29,7 +29,6 @@ async function fetchPostDetails() {
             throw new Error("Blog post is not found");
         }
         const postDetail = await response.json();
-console.log(postDetail)
         const titleElement = document.getElementById("title");
         const blogPostContainer = document.getElementById("post-details");
 
@@ -45,15 +44,22 @@ console.log(postDetail)
         postDate.classList.add("post__date");
         blogPostContainer.appendChild(postDate);
 
-        const image = document.createElement("img");
-        image.src = postDetail.jetpack_featured_media_url;
-        image.alt = postDetail.description;
-        image.classList.add("post__image");
-        blogPostContainer.appendChild(image);
+        //const image = document.createElement("img");
+        //image.src = postDetail.jetpack_featured_media_url;
+        //image.alt = postDetail.description;
+        //image.classList.add("post__image");
+        //blogPostContainer.appendChild(image);
 
-        const postText = document.createElement("p");
-        postText.textContent=postDetail.content.rendered;
+        const postText = document.createElement("div");
+        postText.innerHTML=postDetail.content.rendered;
         postText.classList.add("post__text");
+        const paragraphs = postText.querySelectorAll("p");
+        if (paragraphs.length > 0) {
+          paragraphs[0].classList.add("post__intro");
+        }
+        postText.querySelectorAll("img").forEach((img) => {
+            img.classList.add("post__image");
+          });
         blogPostContainer.appendChild(postText);
 
 

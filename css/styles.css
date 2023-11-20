@@ -162,7 +162,7 @@ ul {
 }
 
 .carousel__slide {
-    width: 30%;
+    width: 90%;
     padding: 20px; 
     align-self: center; 
 }
@@ -172,6 +172,7 @@ ul {
     font-size: 1.2em;
     font-weight: 800;
     padding: 5px 20px;
+    cursor: pointer;
 }
 
 .carousel__img {
@@ -179,6 +180,7 @@ ul {
     height: 250px;
     object-fit: cover;
     padding: 0px;
+    cursor: pointer;
 }
 
 .carousel__button {
@@ -306,6 +308,20 @@ footer {
         padding: 0px 0px;
     }
 
+    .carousel__slide {
+        width: 40%;
+    }
+
+}
+
+
+
+
+
+@media (min-width: 1172px ) {
+    .carousel__slide {
+        width: 30%;
+    }
 }
 
 @media (min-width: 1700px) {
@@ -315,5 +331,15 @@ footer {
 
     .main-img-about {
         width: 500px; 
+    }
+
+    .carousel__title {
+        margin: 5px;
+        padding: 5px;  
+    }
+
+    .stories-box {
+        padding-bottom: 0px;
+
     }
 }
