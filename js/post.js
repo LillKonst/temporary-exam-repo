@@ -24,7 +24,7 @@ async function fetchPostDetails() {
     }
 
     try {
-        const response = await fetch(`${tinyStoriesAPI}/${postId}`);
+        const response = await fetch(`${tinyStoriesAPI}/${postId}?_embed&raw`);
         if (!response.ok) {
             throw new Error("Blog post is not found");
         }
@@ -50,17 +50,37 @@ async function fetchPostDetails() {
         //image.classList.add("post__image");
         //blogPostContainer.appendChild(image);
 
-        const postText = document.createElement("div");
-        postText.innerHTML=postDetail.content.rendered;
-        postText.classList.add("post__text");
-        const paragraphs = postText.querySelectorAll("p");
-        if (paragraphs.length > 0) {
-          paragraphs[0].classList.add("post__intro");
-        }
-        postText.querySelectorAll("img").forEach((img) => {
-            img.classList.add("post__image");
-          });
-        blogPostContainer.appendChild(postText);
+        const postContent = document.createElement("div");
+        postContent.innerHTML = postDetail.content.rendered;
+        postContent.classList.add("post__content");
+        
+        const textContentContainer = document.createElement("div");
+        textContentContainer.classList.add("text-content");
+      
+        const firstParagraph = postContent.querySelectorAll("p");
+            if (firstParagraph.length > 0) {
+                firstParagraph[0].classList.add("post__intro");
+            }
+        
+            const paragraphs = postContent.querySelectorAll("p");
+                paragraphs.forEach((paragraphs) => {
+                paragraphs.classList.add("post__paragraphs");
+            });
+    
+        const firstImage = postContent.querySelector("img");
+            if (firstImage) {
+            firstImage.classList.add("first-image");
+            }
+
+            const images = postContent.querySelectorAll("img");
+            images.forEach((image, index) => {
+              if (index !== 0) {
+                image.classList.add("post__images");
+              }
+            });
+    
+        blogPostContainer.appendChild(postContent);
+        blogPostContainer.appendChild(textContentContainer);
 
 
     } catch (error) {

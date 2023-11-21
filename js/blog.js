@@ -1,5 +1,5 @@
 const tinyStoriesAPI = "https://rainydays-api.lillkonst.no/wp-json/wp/v2/posts";
-const postsPerPage = 9;
+const postsPerPage = 10;
 let currentPage = 1;
 
 function showLoadingIndicator() {
