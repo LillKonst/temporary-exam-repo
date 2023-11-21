@@ -44,12 +44,6 @@ async function fetchPostDetails() {
         postDate.classList.add("post__date");
         blogPostContainer.appendChild(postDate);
 
-        //const image = document.createElement("img");
-        //image.src = postDetail.jetpack_featured_media_url;
-        //image.alt = postDetail.description;
-        //image.classList.add("post__image");
-        //blogPostContainer.appendChild(image);
-
         const postContent = document.createElement("div");
         postContent.innerHTML = postDetail.content.rendered;
         postContent.classList.add("post__content");
@@ -72,15 +66,35 @@ async function fetchPostDetails() {
             firstImage.classList.add("first-image");
             }
 
-            const images = postContent.querySelectorAll("img");
-            images.forEach((image, index) => {
-              if (index !== 0) {
+        const groupImages = Array.from(postContent.querySelectorAll("img"));
+        const imageContainer = document.createElement("div");
+        imageContainer.classList.add("image-group");
+
+        groupImages.slice(1).forEach((image) => {
+        const clonedImage = image.cloneNode(true);
+        clonedImage.classList.add("post__images");
+        imageContainer.appendChild(clonedImage);
+        image.style.display = "none";
+        });
+
+        const images = postContent.querySelectorAll("img");
+        images.forEach((image) => {
+            const altText = image.getAttribute("alt");
+            console.log("Alt text:", altText);
+          });
+        images.forEach((image, index) => {
+            if (index !== 0) {
                 image.classList.add("post__images");
-              }
-            });
+            }
+        });
+                   
     
+        const lastParagraph = paragraphs[paragraphs.length - 1];
+        postContent.insertBefore(imageContainer, lastParagraph);
+
         blogPostContainer.appendChild(postContent);
         blogPostContainer.appendChild(textContentContainer);
+        postContent.insertBefore(lastParagraph, imageContainer.nextSibling);
 
 
     } catch (error) {

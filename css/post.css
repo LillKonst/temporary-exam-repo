@@ -44,9 +44,46 @@
     padding: 0;
 }
 
+.post__image-group {
+    display: flex;
+    flex-direction: row;
+}
+
 .post__images {
     width: 28%; 
     object-fit: cover;
+    height: 300px; 
+    padding: 20px; 
 }
 
+
+@media (max-width: 900px){
+
+    .blog-post__container {
+        padding: 0px 50px; 
+    }
+
+    .post__date {
+        align-self: flex-start;
+        margin: 0;
+        padding: 0px 40px 20px ;
+    }
+
+    .post__images {
+        height: 200px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 550px) {
+    .blog-post__container {
+        padding: 0px 30px; 
+    }
+
+
+    .post__images {
+        height: 100px;
+        padding: 5px;
+    }
+}
 
