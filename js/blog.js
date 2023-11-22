@@ -20,11 +20,11 @@ async function getPosts(page) {
             throw new Error("Something went wrong");
         }
 
-        const results = await response.json();
+        const results = await response.json(); console.log(results);
         return results;
     } catch (error) {
         throw error;
-    }
+    } 
 }
 
 async function displayListOfPosts(posts) {
@@ -48,11 +48,11 @@ async function displayListOfPosts(posts) {
     
             const image = document.createElement("img");
             image.src = post.jetpack_featured_media_url;
-            image.alt = post.description;
+            image.alt = post;
             image.classList.add("blog__img-min", "carousel__img");
             postMiniature.appendChild(image);
         }
-    } catch (error) {
+        } catch (error) {
         showError(error.message);
     }
 }
