@@ -2,11 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title id="title">Tiny Stories | Post</title>
+    <title id="title">Tiny Stories | POST</title>
+    <meta name="description" content="Tiny Stories blog. Read our blog post." />
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/post.css" />
     <script src="/js/post.js" defer></script>
+    <script src="/js/script.js" defer></script>
   </head>
   <body>
     <header>
@@ -32,21 +35,37 @@
     </header>
     <main>
       <article class="blog-post__container" id="post-details"></article>
-      
+
       <div id="modal" class="modal">
         <span class="close">&times;</span>
-        <img src="" alt="Modal Image" class="modal-content">
+        <img src="" alt="Modal Image" class="modal-content" />
       </div>
 
       <div class="box">
         <h3 class="heading-circle">MORE STORIES</h3>
         <div class="stories-box">
-        
+          <button
+            id="prev-button"
+            class="carousel__button carousel__button--left"
+          >
+            <img src="/images/left.svg" alt="" />
+          </button>
+
+          <div class="list-of-posts carousel__track"></div>
+          <button
+            id="next-button"
+            class="carousel__button carousel__button--right"
+          >
+            <img src="/images/right.svg" alt="" />
+          </button>
         </div>
       </div>
     </main>
     <footer>
-      <p class="footer-text">COPYRIGHT 2023 @ TINY STORIES</p>
+      <a href="#header"
+        ><img src="/images/LOGO.svg" alt="logo" class="footer__logo" /></a
+      ><img />
+      <p class="footer-text">COPYRIGHT © 2023 | Tiny Stories</p>
     </footer>
   </body>
 </html>

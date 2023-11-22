@@ -68,7 +68,7 @@ async function fetchPostDetails() {
 
     const groupImages = Array.from(postContent.querySelectorAll("img"));
     const imageContainer = document.createElement("div");
-    imageContainer.classList.add("image-group");
+    imageContainer.classList.add("post__image-group");
 
     groupImages.slice(1).forEach((image) => {
       const clonedImage = image.cloneNode(true);
@@ -99,7 +99,6 @@ async function fetchPostDetails() {
   }
 }
 
-// Rest of your code for openModal and closeModal functions
 // Function to open the modal with the clicked image
 function openModal(imageSrc) {
     const modal = document.getElementById('modal');
