@@ -79,6 +79,7 @@
   .modal-content {
     margin: auto;
     display: block;
+    padding: 50px;
     max-width: 80%;
     max-height: 80%;
   }
