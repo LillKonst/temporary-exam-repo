@@ -30,13 +30,16 @@ main {
     display: flex;
     flex-direction: column;
     align-self: center;
-    margin: 10px 0px;
+    margin: 0px 0px;
+}
+
+label {
+    padding: 2px 5px;
 }
 
 input {
     margin-bottom: 10px; 
     width: 600px;
-    color: blue;
 }
 
 .message-box {
@@ -44,8 +47,8 @@ input {
 }
 
 .cta-btn {
-    width: 300px;
-    align-self: flex-start;
+    width: 200px;
+    margin-left: 5px;
 }
 
 .contact__img {
